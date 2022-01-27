@@ -23,7 +23,7 @@ const tasks = [
 ];
 
 // GET
-app.get("/api/tasks" , (request, response) => {
+app.get("/" , (request, response) => {
     response.send(tasks);
 });
 
