@@ -36,7 +36,7 @@ app.get("/api/tasks/:id" , (request, response) => {
 });
 
 // POST
-app.post("/api/tasks", (request, response) => {
+app.post("/api/task", (request, response) => {
     const { error } = (request.body);
 
     if(error) return response.status(400).send("The name should be at least 3 chars long!")
