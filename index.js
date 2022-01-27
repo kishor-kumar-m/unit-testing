@@ -28,7 +28,7 @@ app.get("/api/tasks" , (request, response) => {
 });
 
 // GET (BY ID)
-app.get("/api/tasks/:id" , (request, response) => {
+app.get("/api/task/:id" , (request, response) => {
     const taskId = request.params.id;
     const task = tasks.find(task => task.id === parseInt(taskId));
     if(!task) return response.status(404).send("The task with the provided ID does not exist.");
@@ -70,7 +70,7 @@ app.put("/api/tasks/:id", (request, response) => {
 
 
 //PATCH
-app.patch("/api/tasks/:id", (request, response) => {
+app.patch("/api/tasks/update/:id", (request, response) => {
     const taskId = request.params.id;
     const task = tasks.find(task => task.id === parseInt(taskId));
     if(!task) return response.status(404).send("The task with the provided ID does not exist.");
@@ -88,7 +88,7 @@ app.patch("/api/tasks/:id", (request, response) => {
 });
 
 //DELETE
-app.delete("/api/tasks/:id", (request, response) => {
+app.delete("/api/tasks/delete/:id", (request, response) => {
     const taskId = request.params.id;
     const task = tasks.find(task => task.id === parseInt(taskId));
     if(!task) return response.status(404).send("The task with the provided ID does not exist.");
